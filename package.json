@@ -1,0 +1,19 @@
+{
+  "name": "@norjs/framework",
+  "version": "1.0.0",
+  "description": "The NorJS Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/norjs/framework.git"
+  },
+  "author": "Jaakko Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/norjs/framework/issues"
+  },
+  "homepage": "https://github.com/norjs/framework#readme"
+}
