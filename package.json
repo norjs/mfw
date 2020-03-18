@@ -1,19 +1,19 @@
 {
-  "name": "@norjs/framework",
+  "name": "@norjs/mfw",
   "version": "1.0.0",
-  "description": "The NorJS Framework",
+  "description": "The NorJS Micro Framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/norjs/framework.git"
+    "url": "git+https://github.com/norjs/mfw.git"
   },
   "author": "Jaakko Heusala <jheusala@iki.fi>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/norjs/framework/issues"
+    "url": "https://github.com/norjs/mfw/issues"
   },
-  "homepage": "https://github.com/norjs/framework#readme"
+  "homepage": "https://github.com/norjs/mfw#readme"
 }

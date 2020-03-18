@@ -1,2 +1,3 @@
-# framework
-The NorJS Framework
+# @norjs/mfw
+
+The NorJS Micro Framework
