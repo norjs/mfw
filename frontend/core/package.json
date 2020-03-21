@@ -2,7 +2,7 @@
   "name": "@norjs/mfw-frontend",
   "version": "1.0.0",
   "description": "The NorJS MFW Frontend",
-  "main": "./src/main.js",
+  "main": "src/core-main.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",

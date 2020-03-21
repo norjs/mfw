@@ -9,10 +9,10 @@ const FRONTEND_CONTENT_BASE = PATH.join(__dirname, 'dist');
 module.exports = {
     mode: FRONTEND_ENV,
     context: PATH.join(__dirname, "src"),
-    entry: "./main",
+    entry: "./core-main",
     output: {
         path: PATH.join(__dirname, "dist"),
-        filename: "bundle.js"
+        filename: "core-bundle.js"
     },
     module: {
         rules: [
@@ -35,7 +35,7 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify(FRONTEND_ENV)
         }),
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: 'core-template.html',
             inject: 'head'
         })
     ],
