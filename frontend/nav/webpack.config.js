@@ -5,7 +5,7 @@ const WebpackConfigUtils = require("../common/utils/WebpackConfigUtils");
 module.exports = WebpackConfigUtils.createWebpackConfig({
     dirname: __dirname,
     env: process.env.NODE_ENV || 'development',
-    port: process.env.FRONTEND_PORT || require('../ports.json').core,
+    port: process.env.FRONTEND_PORT || require('../ports.json').nav,
     webpack,
     HtmlWebpackPlugin
 });

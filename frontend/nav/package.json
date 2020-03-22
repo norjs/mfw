@@ -1,8 +1,8 @@
 {
-  "name": "@norjs/mfw-frontend",
+  "name": "@norjs/mfw-frontend-nav",
   "version": "1.0.0",
-  "description": "The NorJS MFW Frontend",
-  "main": "src/core-main.js",
+  "description": "The NorJS MFW Frontend Navigation",
+  "main": "src/nav-main.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
