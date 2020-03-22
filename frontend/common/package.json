@@ -1,0 +1,14 @@
+{
+  "name": "@norjs/mfw-frontend-common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaakko Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "devDependencies": {
+    "lodash": "^4.17.15"
+  }
+}

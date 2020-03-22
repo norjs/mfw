@@ -9,8 +9,16 @@ export class NrHTMLElement extends HTMLElement {
 
         super();
 
-        this._initShadowRoot();
-        this._setTemplateString(template);
+        /**
+         *
+         * @member {string}
+         * @private
+         */
+        this._template = template;
+
+    }
+
+    destroy () {
 
     }
 
@@ -18,9 +26,51 @@ export class NrHTMLElement extends HTMLElement {
      *
      * @protected
      */
-    _initShadowRoot () {
+    connectedCallback() {
 
-        this._shadowRoot = this.attachShadow({mode: 'open'});
+        this._setTemplateString(this._template);
+
+        this._render();
+
+    }
+
+    /**
+     *
+     * @protected
+     */
+    disconnectedCallback() {
+
+        this.destroy();
+
+    }
+
+    /**
+     *
+     * @protected
+     */
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        this._render();
+
+    }
+
+    /**
+     *
+     * @protected
+     */
+    adoptedCallback(name, oldValue, newValue) {
+
+        this._render();
+
+    }
+
+    /**
+     *
+     * @protected
+     */
+    _render () {
+
+        console.log(`RENDERED`);
 
     }
 
@@ -31,7 +81,7 @@ export class NrHTMLElement extends HTMLElement {
      */
     _setTemplateString (template) {
 
-        this._shadowRoot.innerHTML = template;
+        this.innerHTML = template;
 
     }
 

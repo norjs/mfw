@@ -8,14 +8,16 @@ module.exports = class WebpackConfigUtils {
      * @param mode {string}
      * @param templateFile {string}
      * @param port {number}
-     * @returns {{mode: string, output: {path: string, filename: string}, devServer: {compress: boolean, port: number}, entry: string, plugins: [*, *], module: {rules: [{test: RegExp, loader: string, query: {presets: [string]}, exclude: RegExp}, {test: RegExp, loader: string}]}, context: string}}
+     * @param proxy {Object.<string, string>} The proxy configurations
+     * @returns {{mode: string, output: {path: string, filename: string}, devServer: {compress: boolean, port: number, contentBase: string}, entry: string, plugins: [*, *], module: {rules: [{test: RegExp, loader: string, query: {presets: [string]}, exclude: RegExp}, {test: RegExp, loader: string}]}, context: string}}
      */
     static createWebpackConfig ({
         dirname,
         mode = 'development',
         port = 3000,
         webpack,
-        HtmlWebpackPlugin
+        HtmlWebpackPlugin,
+        proxy = {}
     } = {}) {
 
         if (!dirname) throw new TypeError(`You must provide dirname`);
@@ -42,6 +44,17 @@ module.exports = class WebpackConfigUtils {
             module: {
                 rules: [
                     {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                            // Creates `style` nodes from JS strings
+                            'style-loader',
+                            // Translates CSS into CommonJS
+                            'css-loader',
+                            // Compiles Sass to CSS
+                            'sass-loader'
+                        ],
+                    },
+                    {
                         test: /\.js$/,
                         exclude: /node_modules/,
                         loader: 'babel-loader',
@@ -67,9 +80,37 @@ module.exports = class WebpackConfigUtils {
             devServer: {
                 contentBase: distDir,
                 compress: true,
-                port
+                port,
+                proxy
             }
         };
+
+    }
+
+    /**
+     * Creates proxy configuration object for webpack-dev-server.
+     *
+     * @param basePath {string}
+     * @param ports {Object.<string, number>}
+     * @returns {Object.<string, string>}
+     */
+    static createWebpackDevServerProxyObject (basePath = '', ports) {
+
+        return Object.keys(ports).filter(key => key !== "core").reduce((obj, key) => {
+
+            const path = `${basePath}/${key}`;
+            const port = ports[key];
+            const url = `http://localhost:${port}`;
+
+            obj[path] = {
+                target: url,
+                pathRewrite: {
+                    [`^${path}`] : ''
+                }
+            };
+
+            return obj;
+        }, {});
 
     }
 
