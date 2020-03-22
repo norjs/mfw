@@ -17,7 +17,6 @@ module.exports = class WebpackConfigUtils {
         port = 3000,
         webpack,
         HtmlWebpackPlugin,
-        publicPath = '/',
         proxy = {}
     } = {}) {
 
@@ -41,7 +40,7 @@ module.exports = class WebpackConfigUtils {
             output: {
                 path: distDir,
                 filename: bundleFilename,
-                publicPath: publicPath
+                publicPath: '/'
             },
             module: {
                 rules: [
@@ -72,6 +71,7 @@ module.exports = class WebpackConfigUtils {
                     'process.env.NODE_ENV': JSON.stringify(mode)
                 }),
                 new HtmlWebpackPlugin({
+                    base: '/',
                     template: templateFile,
                     inject: 'head'
                 })
