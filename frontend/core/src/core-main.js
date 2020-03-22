@@ -3,7 +3,7 @@ import "./components/nrApp/nrAppComponent.js";
 import coreConfig from "./core-config.json";
 import TRANSLATIONS from "../../../translations/index.js";
 
-import {FrontendService} from "../../services/FrontendService";
+import {FrontendService} from "../../common/services/FrontendService";
 import {TranslationService} from "../../../services/TranslationService";
 
 TranslationService.setTranslation("en", TRANSLATIONS.en);

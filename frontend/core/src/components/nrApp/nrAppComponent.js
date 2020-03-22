@@ -1,4 +1,4 @@
 import { NrAppElement } from "./NrAppElement.js";
-import { WebComponentUtils } from "../../../../utils/WebComponentUtils";
+import { WebComponentUtils } from "../../../../common/utils/WebComponentUtils";
 
 WebComponentUtils.defineElement('nr-app', NrAppElement);
