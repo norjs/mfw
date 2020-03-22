@@ -8,11 +8,10 @@ const PROXY = WebpackConfigUtils.createWebpackDevServerProxyObject("/views", POR
 
 module.exports = WebpackConfigUtils.createWebpackConfig({
     dirname: __dirname,
+    publicPath: '/',
     env: process.env.NODE_ENV || 'development',
     port: process.env.FRONTEND_PORT || PORTS.core,
     webpack,
     HtmlWebpackPlugin,
     proxy: PROXY
 });
-
-console.log(`WOOT: `, PROXY);

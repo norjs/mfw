@@ -17,6 +17,7 @@ module.exports = class WebpackConfigUtils {
         port = 3000,
         webpack,
         HtmlWebpackPlugin,
+        publicPath = '/',
         proxy = {}
     } = {}) {
 
@@ -39,20 +40,18 @@ module.exports = class WebpackConfigUtils {
             entry,
             output: {
                 path: distDir,
-                filename: bundleFilename
+                filename: bundleFilename,
+                publicPath: publicPath
             },
             module: {
                 rules: [
                     {
-                        test: /\.s[ac]ss$/i,
+                        test: /\.scss$/i,
                         use: [
-                            // Creates `style` nodes from JS strings
-                            'style-loader',
-                            // Translates CSS into CommonJS
-                            'css-loader',
-                            // Compiles Sass to CSS
-                            'sass-loader'
-                        ],
+                            'style-loader',   // Creates `style` nodes from JS strings
+                            'css-loader',     // Translates CSS into CommonJS
+                            'sass-loader'     // Compiles Sass to CSS
+                        ]
                     },
                     {
                         test: /\.js$/,
