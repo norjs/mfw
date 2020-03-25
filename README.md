@@ -1,3 +1,3 @@
-# @norjs/mfw
+# Sendanor MFW
 
-The NorJS Micro Framework
+The Micro Frontend App Design App
