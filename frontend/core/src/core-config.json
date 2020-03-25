@@ -38,5 +38,13 @@
       "href": "/settings",
       "app": "/views/settings"
     }
-  ]
+  ],
+  "components": {
+    "nrNav": {
+      "href": "/views/nav"
+    },
+    "nrLoading": {
+      "href": "/views/loading"
+    }
+  }
 }

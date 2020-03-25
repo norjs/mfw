@@ -1,55 +1,40 @@
-import {NrHTMLElement} from "../NrHTMLElement.js";
+import {NrFrameElement} from "./NrFrameElement.js";
 import nrAppTemplate from "./nr-app-template.html";
 
-export class NrAppElement extends NrHTMLElement {
+export class NrAppElement extends NrFrameElement {
 
     /**
      *
      */
     constructor() {
 
-        super(nrAppTemplate);
-
-        /**
-         * @member {string|undefined}
-         */
-        this._src = undefined;
-
-        this._updateSrcAttribute();
+        super(nrAppTemplate, this._getDefaultViewName());
 
     }
 
-    _render () {
-
-        this._updateSrcAttribute();
-
-        this._updateIframe();
-
-        super._render();
-
+    /**
+     *
+     * @returns {string}
+     * @private
+     */
+    _getSourceAttributeName () {
+        return 'src';
     }
 
-    _updateSrcAttribute () {
+    /**
+     *
+     * @returns {string}
+     * @protected
+     */
+    _getSource () {
 
-        if (this.hasAttribute('src')) {
-            this._src = this.getAttribute('src');
-        } else {
-            this._src = "/views/loading";
+        const srcName = this._getSourceAttributeName();
+
+        if (this.hasAttribute(srcName)) {
+            return this.getAttribute(srcName);
         }
 
-    }
-
-    _updateIframe () {
-
-        if (this._src) {
-
-            const iframe = this.querySelector('iframe');
-
-            iframe.src = this._src;
-
-            console.info(`WOOT: ${this._src}`);
-
-        }
+        return super._getSource();
 
     }
 
