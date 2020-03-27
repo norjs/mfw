@@ -1,14 +1,16 @@
 
-nr-app {
+.nr-app {
 
   width: auto;
   height: auto;
   display: block;
 
-  iframe {
-    width: auto;
-    height: auto;
-    background: none transparent;
-  }
+}
+
+.nr-frame {
+
+  width: 100%;
+  height: 100%;
+  background: none transparent;
 
 }

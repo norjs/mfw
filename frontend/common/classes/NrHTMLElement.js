@@ -5,7 +5,9 @@ export class NrHTMLElement extends HTMLElement {
      *
      * @param template {string}
      */
-    constructor (template = '') {
+    constructor (
+        template = ''
+    ) {
 
         super();
 

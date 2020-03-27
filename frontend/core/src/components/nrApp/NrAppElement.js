@@ -1,5 +1,5 @@
-import {NrFrameElement} from "./NrFrameElement.js";
-import nrAppTemplate from "./nr-app-template.html";
+import {NrFrameElement} from "../../../../common/classes/NrFrameElement.js";
+import nrAppTemplate from "../../../../common/templates/nr-iframe-element-template.html";
 
 export class NrAppElement extends NrFrameElement {
 

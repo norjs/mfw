@@ -36,15 +36,15 @@
   "views": [
     {
       "href": "/settings",
-      "app": "/views/settings"
+      "app": "/views/settings/"
     }
   ],
   "components": {
-    "nrNav": {
-      "href": "/views/nav"
+    "nr-nav": {
+      "href": "/views/nav/"
     },
-    "nrLoading": {
-      "href": "/views/loading"
+    "nr-loading": {
+      "href": "/views/loading/"
     }
   }
 }

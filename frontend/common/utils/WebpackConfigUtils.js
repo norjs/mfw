@@ -39,8 +39,8 @@ module.exports = class WebpackConfigUtils {
             entry,
             output: {
                 path: distDir,
-                filename: bundleFilename,
-                publicPath: '/'
+                filename: bundleFilename
+                // , publicPath: '/'
             },
             module: {
                 rules: [
@@ -71,7 +71,7 @@ module.exports = class WebpackConfigUtils {
                     'process.env.NODE_ENV': JSON.stringify(mode)
                 }),
                 new HtmlWebpackPlugin({
-                    base: '/',
+                    // base: '/',
                     template: templateFile,
                     inject: 'head'
                 })
