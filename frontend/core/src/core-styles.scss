@@ -15,15 +15,16 @@ body {
   display: flex;
   flex-direction: row;
 
-  & > .nr-nav {
+  & > .cr-nav {
 
-    background-color: #f0f0f0;
+    background-color: #eeffee;
 
   }
 
-  & > .nr-content {
+  & > .cr-content {
 
     flex: 1 0 auto;
+    background-color: #ffffee;
 
   }
 

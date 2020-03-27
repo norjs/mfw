@@ -40,10 +40,10 @@
     }
   ],
   "components": {
-    "nr-nav": {
+    "cr-nav": {
       "href": "/views/nav/"
     },
-    "nr-loading": {
+    "cr-loading": {
       "href": "/views/loading/"
     }
   }
